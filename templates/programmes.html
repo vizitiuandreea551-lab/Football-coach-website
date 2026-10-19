@@ -1,0 +1,3 @@
+{% extends "base.html" %}{% block body %}<h2>Programmes</h2><div class="grid">{% for p in progs %}<div class="card"><h3>{{ p.age_group }}</h3>
+<p><b>When:</b> {{ p.days }}, {{ p.time }}<br><b>Where:</b> {{ p.venue }}<br><b>Cost:</b> {{ p.price }}<br><b>Focus:</b> {{ p.focus }}</p>
+<a class="btn" href="{{ url_for('signup') }}">Sign up</a></div>{% endfor %}</div>{% endblock %}

@@ -1,0 +1,10 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}Coach Name FC{% endblock %} | U14 &amp; U16 Football Coaching</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head><body>
+<header><div class="bar"><a class="logo" href="{{ url_for('index') }}">⚽ Coach Name FC</a><nav>
+<a href="{{ url_for('about') }}">About</a><a href="{{ url_for('programmes') }}">Programmes</a><a href="{{ url_for('fixtures') }}">Fixtures</a>
+<a href="{{ url_for('news') }}">News</a><a href="{{ url_for('gallery') }}">Gallery</a><a href="{{ url_for('safeguarding') }}">Safeguarding</a>
+<a href="{{ url_for('contact') }}">Contact</a><a href="{{ url_for('signup') }}"><b>Sign up</b></a></nav></div></header>
+{% block hero %}{% endblock %}
+<main>{% for cat, m in get_flashed_messages(with_categories=true) %}<div class="flash {{ cat }}">{{ m }}</div>{% endfor %}{% block body %}{% endblock %}</main>
+<footer>© 2026 Coach Name FC · <a href="{{ url_for('safeguarding') }}">Safeguarding &amp; Policies</a> · <a href="{{ url_for('login') }}">Coach login</a></footer></body></html>

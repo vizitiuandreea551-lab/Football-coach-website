@@ -1,0 +1,2 @@
+{% extends "base.html" %}{% block body %}<h2>Gallery</h2><p>Only photos of players with parental photo consent are published. Replace these tiles with real images placed in <code>static/</code>.</p>
+<div class="grid">{% for i in ['⚽','🏆','🥅','👟','🧤','🎽'] %}<div class="shot">{{ i }}</div>{% endfor %}</div>{% endblock %}

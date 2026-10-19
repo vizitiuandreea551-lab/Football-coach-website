@@ -1,0 +1,2 @@
+{% extends "base.html" %}{% block body %}<h2>Fixtures &amp; results</h2><table><tr><th>Date</th><th>Team</th><th>Match</th><th>Result</th></tr>
+{% for f in rows %}<tr><td>{{ f.match_date }}</td><td>{{ f.age_group }}</td><td>{{ 'vs' if f.home else '@' }} {{ f.opponent }}</td><td>{{ f.score or 'Upcoming' }}</td></tr>{% endfor %}</table>{% endblock %}

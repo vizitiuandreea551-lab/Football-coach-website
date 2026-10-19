@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS programmes(id INTEGER PRIMARY KEY, age_group TEXT, days TEXT, time TEXT, venue TEXT, price TEXT, focus TEXT);
+CREATE TABLE IF NOT EXISTS fixtures(id INTEGER PRIMARY KEY AUTOINCREMENT, age_group TEXT, opponent TEXT, match_date TEXT, home INTEGER DEFAULT 1, score TEXT);
+CREATE TABLE IF NOT EXISTS news(id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT NOT NULL, body TEXT NOT NULL, created TEXT DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE IF NOT EXISTS testimonials(id INTEGER PRIMARY KEY, author TEXT, quote TEXT);
+CREATE TABLE IF NOT EXISTS signups(id INTEGER PRIMARY KEY AUTOINCREMENT, parent_name TEXT, email TEXT, phone TEXT, child_name TEXT, child_age INTEGER, age_group TEXT, photo_consent INTEGER DEFAULT 0, message TEXT, created TEXT DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE IF NOT EXISTS messages(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, email TEXT, body TEXT, created TEXT DEFAULT CURRENT_TIMESTAMP);
+INSERT OR IGNORE INTO programmes VALUES(1,'U14','Tue & Thu','17:30–19:00','Riverside Park 3G Pitch','£6 per session','Ball control, passing, small-sided games');
+INSERT OR IGNORE INTO programmes VALUES(2,'U16','Mon & Wed','18:00–19:30','Riverside Park 3G Pitch','£7 per session','Tactics, fitness, match preparation');
+INSERT OR IGNORE INTO fixtures(id,age_group,opponent,match_date,home,score) VALUES(1,'U14','Riverside Rovers','2026-10-11',0,'3-1');
+INSERT OR IGNORE INTO fixtures(id,age_group,opponent,match_date,home,score) VALUES(2,'U16','Town Juniors','2026-10-25',1,NULL);
+INSERT OR IGNORE INTO fixtures(id,age_group,opponent,match_date,home,score) VALUES(3,'U14','Abbey Athletic','2026-11-01',1,NULL);
+INSERT OR IGNORE INTO news(id,title,body) VALUES(1,'U14s win 3-1 away','A great team performance at Riverside, with two goals in the second half.');
+INSERT OR IGNORE INTO news(id,title,body) VALUES(2,'Trial sessions open','New U14 and U16 players can book a free trial session this month.');
+INSERT OR IGNORE INTO testimonials VALUES(1,'Parent of U14 player','My son has grown in confidence and skill. Brilliant, caring coaching.');
+INSERT OR IGNORE INTO testimonials VALUES(2,'U16 player','Sessions are tough but fun, and I understand the game much better now.');

@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block hero %}<section class="hero"><h1>Developing young footballers, on and off the pitch</h1>
+<p>Professional, safe coaching for under-14 and under-16 players: skills, teamwork and a love of the game.</p><a class="btn" href="{{ url_for('signup') }}">Book a free trial</a></section>{% endblock %}
+{% block body %}<h2>Our programmes</h2><div class="grid">{% for p in progs %}<div class="card"><h3>{{ p.age_group }} Programme</h3>
+<p>{{ p.days }}, {{ p.time }}<br>{{ p.venue }}<br><b>{{ p.price }}</b></p><p>{{ p.focus }}</p></div>{% endfor %}</div>
+<h2>Next fixtures</h2>{% if fixtures %}<div class="grid">{% for f in fixtures %}<div class="card"><span class="tag">{{ f.age_group }}</span><p><b>{{ 'vs' if f.home else '@' }} {{ f.opponent }}</b><br>{{ f.match_date }}</p></div>{% endfor %}</div>{% else %}<p>No upcoming fixtures yet.</p>{% endif %}
+<h2>Latest news</h2><div class="grid">{% for n in news %}<div class="card"><h3>{{ n.title }}</h3><p>{{ n.body }}</p></div>{% endfor %}</div>
+<h2>What people say</h2><div class="grid">{% for t in quotes %}<div class="card"><p class="quote">“{{ t.quote }}”</p><p>— {{ t.author }}</p></div>{% endfor %}</div>{% endblock %}

@@ -1,0 +1,1 @@
+{% extends "base.html" %}{% block body %}<h2>News</h2>{% for n in rows %}<div class="card" style="margin-bottom:14px"><h3>{{ n.title }}</h3><small>{{ n.created[:10] }}</small><p>{{ n.body }}</p></div>{% endfor %}{% endblock %}

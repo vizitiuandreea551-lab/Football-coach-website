@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% block body %}<h2>Sign up / book a trial</h2><form method="post"><input type="hidden" name="_t" value="{{ tok }}">
+<div><label>Parent/guardian name</label><input name="parent_name" required value="{{ f.get('parent_name','') }}"></div>
+<div><label>Email</label><input type="email" name="email" required value="{{ f.get('email','') }}"></div>
+<div><label>Phone</label><input name="phone" value="{{ f.get('phone','') }}"></div>
+<div><label>Child's name</label><input name="child_name" required value="{{ f.get('child_name','') }}"></div>
+<div><label>Child's age</label><input type="number" name="child_age" min="8" max="16" required value="{{ f.get('child_age','') }}"></div>
+<div><label>Age group</label><select name="age_group"><option>U14</option><option>U16</option></select></div>
+<div><label>Message</label><textarea name="message" rows="3">{{ f.get('message','') }}</textarea></div>
+<label class="chk"><input type="checkbox" name="consent" required> I am the parent/guardian and consent to my child attending.</label>
+<label class="chk"><input type="checkbox" name="photos"> I consent to photos/videos of my child being published (optional).</label>
+<button class="btn">Send</button></form>{% endblock %}
